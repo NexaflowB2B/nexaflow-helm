@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "ocr-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/ocr-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "ocr-service"
+  port: 80

@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "analytics-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/analytics-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "analytics-service"
+  port: 80

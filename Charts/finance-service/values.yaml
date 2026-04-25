@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "finance-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/finance-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "finance-service"
+  port: 80

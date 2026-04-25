@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "auth-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/auth-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "auth-service"
+  port: 80

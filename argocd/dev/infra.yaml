@@ -1,0 +1,14 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nexaflow-infra-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: infra/dev
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev

@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "invoice-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/invoice-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "invoice-service"
+  port: 80

@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "inventory-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/inventory-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "inventory-service"
+  port: 80

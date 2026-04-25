@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "ai-service"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/ai-service"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "ai-service"
+  port: 80

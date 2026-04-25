@@ -1,0 +1,10 @@
+﻿namespace: ""
+appName: "frontend"
+replicaCount: 1
+image:
+  repository: "REGISTRY/nexaflow/frontend"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  name: "frontend"
+  port: 80

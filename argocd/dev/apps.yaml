@@ -1,0 +1,129 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/frontend
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: auth-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/auth-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inventory-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/inventory-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: finance-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/finance-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: invoice-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/invoice-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ai-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/ai-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: analytics-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/analytics-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ocr-service-dev
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+    path: Charts/ocr-service
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+---
