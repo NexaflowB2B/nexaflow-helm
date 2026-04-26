@@ -4,6 +4,10 @@ metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Release.Namespace }}
 spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -13,8 +17,10 @@ spec:
       labels:
         app: {{ .Values.appName }}
     spec:
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        - name: ghcr-login
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

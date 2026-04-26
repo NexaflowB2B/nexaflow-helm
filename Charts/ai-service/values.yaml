@@ -17,3 +17,6 @@ secret:
     GOOGLE_GENAI_API_KEY: "" # Paste your kubeseal output here
 env: []
 
+
+imagePullSecrets:
+  - name: ghcr-login

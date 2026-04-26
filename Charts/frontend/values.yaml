@@ -1,4 +1,4 @@
-﻿namespace: ""
+namespace: ""
 appName: "frontend"
 replicaCount: 1
 image:
@@ -15,3 +15,6 @@ secret:
   stringData: {}
 env: []
 
+
+imagePullSecrets:
+  - name: ghcr-login
