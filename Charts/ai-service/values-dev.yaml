@@ -1,16 +1,26 @@
 namespace: "dev"
+appName: "ai-service"
 secret:
   create: true
   sealedData:
-    GEMINI_API_KEY: "dev_gemini_key_here"
+    SECRET_KEY: "AgBoARSWrkPaXtu2ltkiuig1bg9UPBOvJp/G55UnDqGDNhnLfegFrp/niND4DO5sBqpYxtYbOcaNNu9e5f/sTl/+pQ2GoZ/Jr15sgDYzhZcnSXgqNOJZOnGQviRyYn7tx+XdUG5d6nBTvBM+eQmS19eFQqFIU5KhNg83Wlj2Oiv1J0h3DYL7h7alj3QcZk9sib2KLG4LRAqbUfniZ9wm38DK+pBlKUuTWC909dmRTwLReXdCiaB3hetoe6wuozqNyrfvMdwJdBlA5UsyeS+t3VZep21HqHyEN+j6KwFtpOeoGDFucA9Hcix/21Qm7Nj0NI0LtPcmxqx5DWa6HOUyMivFRQnBtUsplrSupMoQ1h+Au5FKQNVftQIAed4M6ii1KytIyr6tXdioEG4NlDnASFZAehVWzLxXDL1XBlresfcUroFPwXKOmm7C+T7WhrKWd1oQqf5KLXLHAa0YjvCL66ouIq4HTwoS3u2ZcCb0DFlBqiYXqfaWVn7cia+vb8nI9Flcsj0KF4mFwA/hTt8IGRfPN6OKU3G1ifpTyHA5P/kmxObqgRTMVVKeywgLxE810UFtjTplubUUaaQ3EeZ0s38y9bnFkcQCIMmKYv27koP+M6bTt9xD5/WBJhany5Qtu4ln5znvZdVjTsCV7qkOnqrHTeph9Xc5XolEgLfbDOipl62Q23vdLvpJV1YsnAkGYocbefbSCgYDq9RVkLqQPfa3WnUk2Z2nvrXF/DvaT0Xfsw=="
+    DATABASE_URL: "AgBMqM5+nhpsIYAzpnv/nLJglqGsF3QMxMq28XFsKt3fXF/V31Z5UCoclNvp9njmzUj7N8yRMuzcelR2u8TvibEa90epp1yvvp2BZ5YKwnAj66VrgkjxwiMvUH1Jqq8k0rgemA86lQIA1hcqhGbO6SSjSa0Q66YA/nrgpntgPkGlvD15aHlsGAxaNTiWA5r7CE+zvCITI3N7MVFbmxr3W95MukktoAC89CGdbInxwJ/d0kfafDbRj+u+ynX35uJLH148js1UichKIwyhudyc6TG7HCutr2xKg2pe38lk4oFKIzKakhSkRHOKZaqkaOFw238ialP8CXQj0+GujQFZvOMpKegkIip76wnqSkZZbk2G0tS9gaRl0wtcTo94opBETjKEGrJiVSGYpge5XwCosR89XLRhXhsLkabP2LctvmNLQJEinKf1sRcMNl52OiXeAs2dI+I0G170NClmhzgNkQcHbpWOVGOtLy3NHnZ9hDH4ak+dpDmzq8EECTVb8OhoRh2PFM08sU1uEuvTOKL/3vmQgShc/Pe4uP4poDdAuKgU+u6E9vtNvXSU6p32JYRLkRDXqiyV5cya9+bGzA57hIJqZ+CWnvZJVRKDm610LQvTNmoUBhK67YWW60oqJ3//xXtzX1rWtLCCbh57pFGMlJ7T5mSH5OzktfhejJhHg7iztBrqdrRcAioNb8mrkho6y+p+axTNuZFdAMv1FzmUFEJVNMuraq1+0xD3Lw01ls5AU7fNukTSgFofo519gvSA1nx0pUU086XVukDu94odfiMO6wFVDQ=="
+    GOOGLE_GENAI_API_KEY: "AgAypexItjbc0LfDhRnx52CQb5XYWZtq47j9x5zkZN7fjVh5t87SXOj4VnPF+qecWY7m2WdpnlFUuAX+gq1wLk4TKKXDeJkTz8gswoiFIyM4haJus/FNXiutn2c+qpUn/VWvsZLg+DDPeI06HBIzvbETNecVHj+nB2p8ikZKGXP07a7CLyi1bBIUha9Y/mCGRDCR+N8yaxF4IIzX51rUsvrS1HyEwtoPofPSepjp2osQbnmrjelDtzX6s9UaKaTAnfntNFzA0RnpoJu2c5vOWpl9jEvUGufZgEArgiDsyP+akluZ1gehfeUkZkmhJ3t8+zOUhd9rimi+s51Wh1AI4F8LP4iOUMNbdw7d5ymDulKkF5OnR7EFlbZbUlRIUJodgXKMbIrPqFxnJGhxeMs1FWRAWFhThJvd9wXoG6npZ3OmsG9cfwzFQnn6hD8kBx2GRuJZZA0ElxlZA+FhFlIIE2zCEoHSrk27o7nUo6CYqYUD4vRXGR9YM8Dezt2H5UutRfTY/olm+5F0XGIh0ucozAKaE/N1y7+QmO8NMxaimFJHCgdHZNbBhGKR5urc6ZdZ/V8woag5/dJ9IRLkIATBxxiWt4W8qhnr1ko8u8+K0wluNAdbDayI0nZEqaFWO5ju08l3FDFOckx92Cy4p9JtkGJz4aS63pHgdsgRsFrvXtx9eXQlwV13Sl8SrvrBmERsP0zh37ezQrD/d3IlXSAfEPc9WVnWL0PKkBCIghWHbaW4eoIJflCNqac="
 env:
-  - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: DATABASE_URL
-  - name: GEMINI_API_KEY
+  - name: SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: ai-service-secret
-        key: GEMINI_API_KEY
+        key: SECRET_KEY
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: ai-service-secret
+        key: DATABASE_URL
+  - name: GOOGLE_GENAI_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: ai-service-secret
+        key: GOOGLE_GENAI_API_KEY
+  - name: ALGORITHM
+    value: "HS256"
