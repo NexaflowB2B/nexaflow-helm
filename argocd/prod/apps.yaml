@@ -17,6 +17,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -37,6 +44,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -57,6 +71,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -77,6 +98,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -97,6 +125,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -117,6 +152,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -137,6 +179,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -157,5 +206,12 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
+    
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
 ---
 
