@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/frontend
+    path: Charts/frontend
     helm:
       valueFiles:
         - values.yaml
@@ -36,7 +36,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/auth-service
+    path: Charts/auth-service
     helm:
       valueFiles:
         - values.yaml
@@ -63,7 +63,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/inventory-service
+    path: Charts/inventory-service
     helm:
       valueFiles:
         - values.yaml
@@ -90,7 +90,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/finance-service
+    path: Charts/finance-service
     helm:
       valueFiles:
         - values.yaml
@@ -117,7 +117,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/invoice-service
+    path: Charts/invoice-service
     helm:
       valueFiles:
         - values.yaml
@@ -144,7 +144,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/ai-service
+    path: Charts/ai-service
     helm:
       valueFiles:
         - values.yaml
@@ -171,7 +171,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/analytics-service
+    path: Charts/analytics-service
     helm:
       valueFiles:
         - values.yaml
@@ -198,7 +198,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: charts/ocr-service
+    path: Charts/ocr-service
     helm:
       valueFiles:
         - values.yaml
