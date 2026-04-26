@@ -1,20 +1,20 @@
 namespace: "dev"
+appName: "analytics-service"
 secret:
   create: true
   sealedData:
-    SECRET_KEY: "dev_secret_key_123"
+    SECRET_KEY: "AgBcqQSukDb6j03y8Ti0JqxY1a+F98LI13mBZTETIS6W90veSpioHbcLDmTb45YCffMPZhrMAzAGtqGeJ4wtub9pfnm9wBZjrP7mYKq9R1lqUhodUqxsHQQTjVJF3KkUEBaFUxkiumx2KUDeG5Y7ioPstCHdur0c/qraELFY8A9c07qMqqANmn/lVv9/4nYSL7J/Q7niGA48UlhOv1dMl0XDKtcVuh1D4DUvC226k+g89PRUK0Sp1/hTlPFp3M7Ko03gsE4wT16RhnXf4p/KqzM90p84Czd+g9JmC3FgPXPngQCTUp6ZpRk3jiarYZnuh1Q9n6v3oAUAkIAmv4gyymhvsFtduItdaqMxL1OZC/dKy2Q1xXS0fcsTd+CDVX48xpksoJOEP3j6PxrTEcqncGki3fry6rLTTfdHS0p0XECwahC+xRHiZe1cZQHHKu1pyFP0ojyRX/eIN+gUbkhsRRPGDTqQ5q/Br/LtiEeaI11wjA8h+bGMsI6WkN/YeCE4LAh2zp3F6HgUSdCqshjG+ddfhhqN3FyDccG/rsaEz9iPW1L1U5CpVi22pfKZQrXJAXWYa+bBQOa1j/F6RIAE9MOrqDfiWtSgptEzMmAVNOvGGws2NLIqesMIWE+Lgdx60aQxZaKEwf+kROBZ6SBpBCCNkPNDPBqNmsytNi62KN8WsRZK9HAtYix0qJ8DYe0YE2jVweiqcS1HXqqf8tl8vp7W9k7mNW6hkLvarShRbXwtzg=="
+    DATABASE_URL: "AgBlegjhDIMtIZ1oOms+NrUrYSw2OEsJfgD0G9TA5MOwEpJuzcsVFVa135YqaG2wFk2yBALoxfa2n74vjGmmAftPT87jF8BICQaUSSJkjba7ZJ+t/075abI2bzwRqsfEMOR9Rkn6eQo9Sl43l6QVLS8Fj3HzAFed5JndxNljmpNJLXrPE4LOmo7htxahD05li2irMqdq13gqh9/2gh8nCtfJ4Y6Kg9k7rvBm8TDlGHJdaxuONruFwZOc5t7GT85szWZosz11lDwDsb+S9ksC8wqvxe8SpB2SDySckASN+NtYEC3pERtL50XLxAXupbqnBs/mHejkdy5sHX9GjO+Ra0KiaaNjgtRgs63IRm2tvO4JBt5r0TJcttTmtyf9K1fi1WT1Au0lUArKqwxoo+tf52BihrAQLwcKMIaQbpSSi7ZuCqRAVd4u+CrDLBc794jittClwrO3+NVR6HzRVUIR15onAA9Em0MEoefT+9KmGd7Z5y+OXaCT4FUQzKWSZAjbzI0lqbyiYwTtbZ0jIxvCJYGqawq7BF/fc7+Xwov3iwMHFQCKkbMWDgPmp2pe6lSxcNc3LF7vF2SwoqNnhbAL3/1PAl3KEQyepZDrmWGzVtZXK3YIBik3u+PuCjaedYpZgXDyoQ7U92fc7DfKhNzxUxBPVASpWn0JG7K5PShTPn1NWZO0vPYFrMA3ii2+x9oNPattZJkaPigoUngpVZCrlOuIW6GROuAdHN4/TABsqv1cTZ4znHdiPPKzzsv+kgtDQH1HPu7NUZvXU78r4iMkkHIpwaBSsg=="
 env:
-  - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: DATABASE_URL
   - name: SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: analytics-service-secret
         key: SECRET_KEY
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: analytics-service-secret
+        key: DATABASE_URL
   - name: ALGORITHM
     value: "HS256"
-  - name: ACCESS_TOKEN_EXPIRE_MINUTES
-    value: "60"
