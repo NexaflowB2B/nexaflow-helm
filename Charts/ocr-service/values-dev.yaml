@@ -1,2 +1,20 @@
 namespace: "dev"
-
+appName: "ocr-service"
+secret:
+  create: true
+  sealedData:
+    SECRET_KEY: "AgDU3vq5dOE5RGV0p8qfFhXj19M+QLiraos77B7N84E/q9p990NrW6KjschxXwZto/AovuYzpq9qvVZeBj9W8LjFqotciOATApFITaEc6aVPZoyE/SUPNKaTcGgFZUv8Kw/ZNDpDj+rwhs2WkYRrBo++yesBCTcdxMIZQKvsF/6BJZ3y/Vk+Fif0qnov3iRVOOjN8FskGt923dkIra8P19hclOF3udRdaxxZhFHmGFeBHL8O19MQb7H8/JWeYNEZESVFSohQC4B2TVVPNF9uishsfVuxXq4dUdRmwZSTx2JbzG4Tc121AmlUVkiVDJiIhWkqGe94T2XJbq/PNgfUqgvYAx2B4geC066mY/ndwihKhw9eLn8lZhCU2OgingKD3KCUrVslchXxYUF8UViBsFFYRnHa+v5Zf3iCJuzRVZUiPKHGPAMgP7SukOKsCxsNOrsbLK5joG7l6xcWAYB3E+OHYpt5PjZghMYUKwZQuy3cHO898lcaqZmh5zZOwNWChC0nYuVtNGGo6LJtJz7rruxUKXwLXzxMziClrLwNp/lCvHmTMu3Sy7ZH8n2TsuIoLILtRauNhMNCgmZfuXosbC8qmO8CYL4Tb6xVe4QLZ6Eo1mgVF8x9Vwam+k+mBRkqn1J8N5uKzI9RNsN/0CrNos+2C+QTljv1vdNL1rVXyTqNCkkNsB6Uu0zeYr9ggGz1ahv2IBbPhniKbylgUUMg/x/SjddEncn6geNMFk2Sx8FErw=="
+    DATABASE_URL: "AgALLUYrIQc6PEcryeWmJUKz/gV6J0jIOi8b0eCgMz6x0O0Msr94Vbl05tzL7WHYZkOjlp7iZICMLkzX0lk1QVZTtIB9ebRtuNz5EC8LIUviV5VufmtwV7AchF5SLsJU3yuk1jO0AA/7Sy/zfppsNc1RGSmlsDrWWjJlVFgjbzrxWuWkQWLcG09u0nIrBeddNQL2yOA2/ypl72+iasVsHdaQtv7imSY2hlf/vsIVsGsgJWGhNzkNOMEdgcDoetNeieolmmmBHe1ash3FauzFjnh/X2UQcJpFCXeLO3Q39+kcEjg14HdUmJBHlTZiy0O1+kJSYnDomBO93W4uF4w1D4IUi2zQdzDdv4WplNxntgToHJqeylw+Rpx4MMR8MKhuwTAkVe8UhIav3Hmrb1bZfn0l66x/6HJawlHf93n+PB3wEqDR8i+867BLUCtXHkbnFNRKMr2uAbMwfpidFr7aZ0kCKIMsnxkK1rHmSnlhrf1VwoPbhKnXkTc46e0SRcuAI7+WRrNWqfMon85hrRLwVJm/k9osODzpxVeYP/e29mQofgOK8aOdBu7HHHfMXvIQ4gg2tSJT/QeeuD0mtWJwTNp+cYLq3cEJJauSEJskI553N6Sr6+aaxNbJZcJNa9ng8LNLq8335JeXGhujaRk0gNqjaiywhz740Itt9tDuQPTvhqVHxN9qTGd3qoT4Ad32W1o88VhFTlIBe7egkMxSK0KoBUdxFR3IZSh8fvJLDStKS/6HKssjGcHdzvNX6IonSQTAHd0Hfc4azkTsxoulHCUGjhi0sA=="
+env:
+  - name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: ocr-service-secret
+        key: SECRET_KEY
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: ocr-service-secret
+        key: DATABASE_URL
+  - name: ALGORITHM
+    value: "HS256"
