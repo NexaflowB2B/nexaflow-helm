@@ -1,6 +1,8 @@
-﻿apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: frontend-prod
   namespace: argocd
 spec:
@@ -17,6 +19,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: auth-service-prod
   namespace: argocd
 spec:
@@ -33,6 +37,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: inventory-service-prod
   namespace: argocd
 spec:
@@ -49,6 +55,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: finance-service-prod
   namespace: argocd
 spec:
@@ -65,6 +73,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: invoice-service-prod
   namespace: argocd
 spec:
@@ -81,6 +91,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: ai-service-prod
   namespace: argocd
 spec:
@@ -97,6 +109,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: analytics-service-prod
   namespace: argocd
 spec:
@@ -113,6 +127,8 @@ spec:
 ---apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: ocr-service-prod
   namespace: argocd
 spec:
@@ -127,3 +143,4 @@ spec:
     server: https://kubernetes.default.svc
     namespace: prod
 ---
+
