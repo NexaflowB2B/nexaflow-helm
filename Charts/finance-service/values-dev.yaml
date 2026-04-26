@@ -1,20 +1,20 @@
 namespace: "dev"
+appName: "finance-service"
 secret:
   create: true
   sealedData:
-    SECRET_KEY: "dev_secret_key_123"
+    SECRET_KEY: "AgCb3/Qo0gb01LJN4JkCoovRyzf74KwCbuBi1+K+xwlVWCihCzjb+gIMiphzSePYhl5gy0VX4uS9HRKMGwS5NF77bnLs2bCV8JZsfteQ+97LxS8GF02S1BtSrPiMu9M0FO2YUyt6a4pvJR1qw6B462J0q+QqfovfnWFYDkwvJOYXWM2v8TsTUixdw5j/SrcFr/OIFej9F/O8G1CGOkPY79klbG85N9mwA1Yrd+ucm9TcvKgyhgogjWrnTeKhgQE8je+Nva2O1+5FSj/8RTHaiUhsNH4nx1t3jk1hIauxAP1DPqQs9gO0j7F6/63I6LcAAv5hTodbn4AHgPEs555p6NVKXQ8h8dJ5HUsrlyRU6qtAuVJCowwIkt+c4LB8LzDlUp6GO33YgAWezXz27URw084lHry+EQf7XrW6g61vq8gGFyOvu5RrslbxJ8O4NCikHndIcWN0jbzyPa3EI65QUuhug7p5GLZFG8Y839jbW0RHuh7BbvJFhfEl3z3BfwJZJ9OzKU4bnUpcj8SEAU8NhO+8r4dWEgiOqoK7EktnmJ0yDIvnXSXjeCS16SHRrh6V5iCCmEtAA5Ez2v3VAPLa+KsFurdIlK7n10p+RC8752fEb/DR3zNizfLPmw/OY8FqRqNF/JDo8GCW/TtBU7UBGA3CY2faCEcaNRaQkOUW0+RvWWy0BanPLK68nFWPR/uSbQB/cXYoxdQlmTmpbiOfip8vzCJH0xAClsIaLj/eALqZmQ=="
+    DATABASE_URL: "AgA46+V+1D+i8peUb9Qng9GK57sj+RgdHbmKAtRALcd6oyT6Hn2xVAaFb71MAOm1OeNgVkEtPWOdCNhgCjBTPZwHrhmAtn/I/zY3rxmKpXt/XtWsZ3zq5q7t6RM9CHYa4slpe+He+869Pc31R1L8GxI5b13aA9PI+/wBu1KFEGM/97/KdkZ7aEvRiH+rpVSPB+yb9ZDx4+DRp7ENsSGptBBRGDfb+bx7NhPipOrRpsekRdGT+cLd07wtIEgyMIHRAP41PsVH9KtudHBXHFbzTY5zz+5VRMMcbq6QnxNOmWPhaNLq7m+oI0DTbRq0tPEmO26BeENlIod50kxtBpw5F8dAGhAHUboEe+xLB9vPiomZ271R8F5pAaNpPEmMPcDGSoB0oJ22DPyFca1BHxEM+BqVXEKe3NAmBor8eXRN7IoJ6fi97khQNLk0Ji9kIXLiiRD15yViLpBdWtd/I6i8mPP+TBdOuMygAU/5KiI6Zv8nizopqwgwSfpmRcuoJv6wcoxcIDeBGFbvyWSr2BBNqp2gYvB33R7dGx//2vE3s6NAothIISoDW+93fm333Z8UtP1R1t6u5t9juSN/UuRJmjYM3X7E609Tcw7BPSlM4TNg0spTXeoPFE67S5bqnVmGR29rSWPonkcJ3T4+oNxC2j7DonvV21SwvM4QNadKydDOc927egynGte86Tb2xVFEPmfrw2cc6M0YXk1Pkqb80EmdWALXfpJJW0Db8MPRAgwDB/+5ZZsFp6UGjDS0ZnQWTEVYRV9ZIySABWNZvke/sngmb6kAfw=="
 env:
-  - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: DATABASE_URL
   - name: SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: finance-service-secret
         key: SECRET_KEY
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: finance-service-secret
+        key: DATABASE_URL
   - name: ALGORITHM
     value: "HS256"
-  - name: ACCESS_TOKEN_EXPIRE_MINUTES
-    value: "60"
