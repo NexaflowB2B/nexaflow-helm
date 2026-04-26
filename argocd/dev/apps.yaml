@@ -16,7 +16,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -34,7 +35,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -52,7 +54,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -70,7 +73,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -88,7 +92,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -106,7 +111,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
@@ -124,7 +130,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
----apiVersion: argoproj.io/v1alpha1
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
