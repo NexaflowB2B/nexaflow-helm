@@ -1,7 +1,7 @@
-﻿namespace: "dev"
+namespace: "dev"
 secret:
   create: true
-  stringData:
+  sealedData:
     SECRET_KEY: "dev_secret_key_123"
 env:
   - name: DATABASE_URL
