@@ -3,3 +3,16 @@ kind: HTTPRoute
 metadata:
   name: frontend-route
   namespace: prod
+spec:
+  parentRefs:
+    - name: nexaflow-gateway
+  hostnames:
+    - nexaflow.internal
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: frontend
+          port: 80
