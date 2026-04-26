@@ -1,9 +1,9 @@
-﻿{{- if .Values.config.map }}
+{{- if .Values.config.map }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Values.appName }}-config
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace }}
 data:
   {{- toYaml .Values.config.map | nindent 2 }}
 {{- end }}

@@ -1,9 +1,11 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
+      imagePullSecrets:
+        - name: ghcr-login
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -13,6 +15,8 @@ spec:
       labels:
         app: {{ .Values.appName }}
     spec:
+      imagePullSecrets:
+        - name: ghcr-login
       containers:
         - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
