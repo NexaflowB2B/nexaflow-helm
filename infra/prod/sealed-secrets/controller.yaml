@@ -3,6 +3,7 @@ kind: Namespace
 metadata:
   name: sealed-secrets
 ---
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -235,7 +236,6 @@ spec:
         fsGroup: 65534
         runAsNonRoot: true
         runAsUser: 1001
-
         seccompProfile:
           type: RuntimeDefault
       serviceAccountName: sealed-secrets-controller
@@ -345,8 +345,7 @@ spec:
                         to another.
                       format: date-time
                       type: string
-
-lastUpdateTime:
+                    lastUpdateTime:
                       description: The last time this condition was updated.
                       format: date-time
                       type: string
@@ -399,4 +398,3 @@ spec:
   selector:
     name: sealed-secrets-controller
   type: ClusterIP
-
