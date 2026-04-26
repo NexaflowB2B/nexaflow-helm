@@ -4,8 +4,6 @@ metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Release.Namespace }}
 spec:
-      imagePullSecrets:
-        - name: ghcr-login
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
