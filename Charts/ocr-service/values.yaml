@@ -1,4 +1,4 @@
-﻿namespace: ""
+namespace: ""
 appName: "ocr-service"
 replicaCount: 1
 image:
@@ -11,7 +11,8 @@ service:
 config:
   map: {}
 secret:
-  create: false
-  stringData: {}
+  create: true
+  sealedData:
+    SECRET_KEY: "" # Paste your kubeseal output here
 env: []
 
