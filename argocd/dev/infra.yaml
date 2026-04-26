@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
     path: infra/dev
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
