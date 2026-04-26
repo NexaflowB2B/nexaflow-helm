@@ -14,6 +14,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -41,6 +48,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -68,6 +82,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -95,6 +116,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -122,6 +150,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -149,6 +184,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -176,6 +218,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -203,6 +252,13 @@ spec:
       valueFiles:
         - values.yaml
         - values-dev.yaml
+    ignoreDifferences:
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+        - /spec/healthCheckNodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
