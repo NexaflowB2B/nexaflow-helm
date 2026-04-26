@@ -102,7 +102,7 @@ rules:
   - ""
   resourceNames:
   - 'http:sealed-secrets-controller:'
-  - http:sealed-secrets-controller:http
+  - 'http:sealed-secrets-controller:http'
   - sealed-secrets-controller
   resources:
   - services/proxy
