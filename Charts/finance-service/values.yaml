@@ -2,7 +2,7 @@
 appName: "finance-service"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/finance-service"
+  repository: "ghcr.io/nexaflowb2b/finance-service"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+

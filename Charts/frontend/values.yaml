@@ -2,7 +2,7 @@
 appName: "frontend"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/frontend"
+  repository: "ghcr.io/nexaflowb2b/frontend"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+

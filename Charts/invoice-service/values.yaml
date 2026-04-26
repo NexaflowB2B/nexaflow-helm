@@ -2,7 +2,7 @@
 appName: "invoice-service"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/invoice-service"
+  repository: "ghcr.io/nexaflowb2b/invoice-service"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+

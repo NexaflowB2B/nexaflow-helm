@@ -2,7 +2,7 @@
 appName: "auth-service"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/auth-service"
+  repository: "ghcr.io/nexaflowb2b/auth-service"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+

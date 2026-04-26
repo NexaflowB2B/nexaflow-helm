@@ -2,7 +2,7 @@
 appName: "inventory-service"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/inventory-service"
+  repository: "ghcr.io/nexaflowb2b/inventory-service"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+

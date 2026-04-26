@@ -2,7 +2,7 @@
 appName: "analytics-service"
 replicaCount: 1
 image:
-  repository: "REGISTRY/nexaflow/analytics-service"
+  repository: "ghcr.io/nexaflowb2b/analytics-service"
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
@@ -14,3 +14,4 @@ secret:
   create: false
   stringData: {}
 env: []
+
