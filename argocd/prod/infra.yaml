@@ -6,6 +6,7 @@ metadata:
   name: nexaflow-infra-prod
   namespace: argocd
 spec:
+  project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
     path: infra/prod
