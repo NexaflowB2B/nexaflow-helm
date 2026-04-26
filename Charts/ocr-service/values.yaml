@@ -7,4 +7,10 @@ image:
   pullPolicy: IfNotPresent
 service:
   name: "ocr-service"
-  port: 80
+  port: 8007
+config:
+  map: {}
+secret:
+  create: false
+  stringData: {}
+env: []

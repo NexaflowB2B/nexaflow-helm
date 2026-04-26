@@ -7,4 +7,10 @@ image:
   pullPolicy: IfNotPresent
 service:
   name: "inventory-service"
-  port: 80
+  port: 8002
+config:
+  map: {}
+secret:
+  create: false
+  stringData: {}
+env: []

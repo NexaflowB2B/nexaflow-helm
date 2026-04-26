@@ -7,4 +7,10 @@ image:
   pullPolicy: IfNotPresent
 service:
   name: "finance-service"
-  port: 80
+  port: 8003
+config:
+  map: {}
+secret:
+  create: false
+  stringData: {}
+env: []

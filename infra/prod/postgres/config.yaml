@@ -3,3 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgres-config
   namespace: prod
+data:
+  postgres.conf: |
+    max_connections = 100
+    shared_buffers = 128MB

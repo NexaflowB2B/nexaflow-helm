@@ -8,3 +8,9 @@ image:
 service:
   name: "frontend"
   port: 80
+config:
+  map: {}
+secret:
+  create: false
+  stringData: {}
+env: []

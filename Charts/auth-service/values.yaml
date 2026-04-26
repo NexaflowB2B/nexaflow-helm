@@ -7,4 +7,10 @@ image:
   pullPolicy: IfNotPresent
 service:
   name: "auth-service"
-  port: 80
+  port: 8001
+config:
+  map: {}
+secret:
+  create: false
+  stringData: {}
+env: []

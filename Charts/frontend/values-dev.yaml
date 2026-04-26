@@ -1,2 +1,19 @@
 ﻿namespace: "dev"
-
+config:
+  map:
+    default.conf: |
+      server {
+          listen 80;
+          server_name _;
+          root /usr/share/nginx/html;
+          index login.html;
+          resolver 127.0.0.11 valid=10s ipv6=off;
+          location /api/auth/ { rewrite ^/api/auth/(.*) /\ break; proxy_pass http://auth-service:8001; }
+          location /api/inventory/ { rewrite ^/api/inventory/(.*) /\ break; proxy_pass http://inventory-service:8002; }
+          location /api/finance/ { rewrite ^/api/finance/(.*) /\ break; proxy_pass http://finance-service:8003; }
+          location /api/invoice/ { rewrite ^/api/invoice/(.*) /\ break; proxy_pass http://invoice-service:8004; }
+          location /api/ai/ { rewrite ^/api/ai/(.*) /\ break; proxy_pass http://ai-service:8005; }
+          location /api/analytics/ { rewrite ^/api/analytics/(.*) /\ break; proxy_pass http://analytics-service:8006; }
+          location /api/ocr/ { rewrite ^/api/ocr/(.*) /\ break; proxy_pass http://ocr-service:8007; }
+          location / { try_files $uri $uri/ /login.html; }
+      }
