@@ -1,20 +1,20 @@
 namespace: "dev"
+appName: "invoice-service"
 secret:
   create: true
   sealedData:
-    SECRET_KEY: "dev_secret_key_123"
+    SECRET_KEY: "AgDB/IVjk3VUE7TFBm6Hx8uMPimMbQy0bXntx5msQAHNTkEkyezyLuvSFJTms+99H9RSOyF3jaUL6ICt+bAKBlnGX1iVqCZR0hk+EamAVcVS91HaG4huM9yihYCmz5MU/HHrHpGyVSV4UgpuNt6cglyyQaBggHQ9ydXOZWmdCjSy8IwlWTScUtObHuzhl3h4pvYtEGvYtIP5PV1ZU7jESZEw8xb6Bxp6jSSLFD+DCt5ZjwH3dEQT/u4B9LSmxYlqwEjktb2Zj7MWNdhOowxWPBTY1HVEkKMu6crF8ihf4qaedYsnqD5urKUfsufTiEmguMerDKlXtSNLNbXrY1r4akkHlO5F3F6Xt+lpOIUWTOM68VdzA6jbGjHkL+yIdWElva2f4MebYf0SN4FZnEoEYmSFvX1YJ9sN8Bxa0EZ0ZVQdnMEh8his4OYMUPM9tYM1u/UFJ5uwCNBbGnFTDRFoMCwMD/yKlQOpxAGemwbEYvVApRaMtHIcPbjuowQSnkd2cM917XyVDxYMg8Kn0GNBRPpdnumn9o0a+/sFbLTm55PlGoO9fbkjMSASJYmfs6XUJC02l99XDIQmitVDK+1S2bbVOlvEz2P7zkohI+kmm5Hs8MdpOpLUM7lnT6Sd23+YQpB0/3qNzXX600lIEd9MNdGvJg9NlI+sGyjh9bRmnInpf+aoBRy0NAsyyQvmhzZyuI0t9nwb8PnBFcbXF3CxYvNZQWKu0DytYiWsP1U7zroFOA=="
+    DATABASE_URL: "AgC+p/luaB/XG9M5DMOQcjhNnt+tyGnupyxCRXNXs2zDO2P4JHLoVHT1/3rNcRgnDTKOPdU0FK3wqtrSn+aw/OV655Mce3ZEvNocdadJRRyTV178xLqbHYY/Iy37u23EZLeC92NcrrebEmO5jP6Cb0aaYifMPzTtUVQN6Dm/otPrEu+7iJdutxqdJtDtePRVjWtD5zQeXQJY1Zgny7nthZh1wGU8ZKfPstmwALzqCy+O2u1NxdawyEsLWBcHhs+s5WotWp7tMwjk595v1uL03YTKagcpopswn5Ilhzr6vb7tJx5WBVuMz5YKX/j7FZaSuxR9Pq9Et6Q1XkDyvmfSq89ll248WrlhwIM0t31r7QEVVxpQB7jtRycLKJWk9dzAIRlD/+2G5jt6pxVe4FKoZAqiq6x0wwAd87TJcQ+HCXIaPwx4rxwu082bwlL0NXVtv5wQtXmgsFCaQKmIozE0bjAgqWV7pNxH+/okb+GFGBaSfzJ+IZ6G0kZPJhVPeHFgRTvCSH2+mYjWCxf2cc9k5JEQIfpY2b+qXZ3bTORW3nqPuWGy8gFqbJ7PPawM8CGyAUWxLFndU7BU9bvI/4rnZVPrZEUhOFQq5WcT0s3gqcFcNCbWUQUOJKzZaE/E8ZvlM63Q45R8SeB9Upy5J+N+bRJnYQUEYj7E0q+PbyrAbs8ao0I/WA9OpGsnm22hne8VsfdRPuOA/21S593YVQQsrOD7qJRlQyqzK4ZEPA/xTA2MrLUhDo3lj3FUHrNFzHv4yMitr7plId/1e+s9lFaUnEn2v4Ia2Q=="
 env:
-  - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: DATABASE_URL
   - name: SECRET_KEY
     valueFrom:
       secretKeyRef:
         name: invoice-service-secret
         key: SECRET_KEY
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: invoice-service-secret
+        key: DATABASE_URL
   - name: ALGORITHM
     value: "HS256"
-  - name: ACCESS_TOKEN_EXPIRE_MINUTES
-    value: "60"
