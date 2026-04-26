@@ -234,7 +234,7 @@ spec:
         runAsNonRoot: true
         runAsUser: 1001
 
-seccompProfile:
+        seccompProfile:
           type: RuntimeDefault
       serviceAccountName: sealed-secrets-controller
       terminationGracePeriodSeconds: 30
