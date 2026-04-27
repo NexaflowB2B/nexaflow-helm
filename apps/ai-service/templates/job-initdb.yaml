@@ -5,6 +5,8 @@ metadata:
   name: {{ .Values.appName }}-initdb
   namespace: {{ .Release.Namespace }}
   annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded
     argocd.argoproj.io/sync-wave: "-1"
 spec:
   backoffLimit: {{ .Values.dbInit.backoffLimit }}
