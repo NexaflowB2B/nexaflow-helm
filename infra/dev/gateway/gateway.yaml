@@ -1,10 +1,10 @@
-﻿apiVersion: gateway.networking.k8s.io/v1
+apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: nexaflow-gateway
   namespace: dev
 spec:
-  gatewayClassName: kgateway
+  gatewayClassName: istio # Update this to match your cluster's gateway class (e.g., istio, gloo, nginx)
   listeners:
     - name: http
       protocol: HTTP

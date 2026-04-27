@@ -79,6 +79,7 @@ items:
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: apps
           kind: Deployment
           jsonPointers:
@@ -115,11 +116,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:
@@ -152,11 +155,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:
@@ -189,11 +194,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:
@@ -226,11 +233,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:
@@ -263,11 +272,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:
@@ -300,11 +311,13 @@ items:
         syncOptions:
           - CreateNamespace=true
           - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
       ignoreDifferences:
         - group: ""
           kind: Service
           jsonPointers:
             - /spec/clusterIP
+            - /spec/clusterIPs
         - group: "*"
           kind: "*"
           jsonPointers:

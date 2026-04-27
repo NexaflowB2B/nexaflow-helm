@@ -7,9 +7,22 @@ config:
           server_name _;
           root /usr/share/nginx/html;
           index login.html;
-          location / { try_files $uri $uri/ /login.html; }
-          location ~* \.html$ { add_header Cache-Control "no-cache"; }
-          location ~* \.(css|js)$ { add_header Cache-Control "public, max-age=3600"; }
+
+          # Support multi-page HTML files without .html extension in URL
+          location / {
+              try_files $uri $uri.html $uri/ /login.html;
+          }
+
+          # Handle errors
+          error_page 404 /login.html;
+
+          location ~* \.html$ { 
+              add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+          }
+          location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg)$ { 
+              add_header Cache-Control "public, max-age=3600"; 
+          }
       }
 image:
   tag: "61349"
+
