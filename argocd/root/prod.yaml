@@ -1,8 +1,10 @@
-﻿apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nexaflow-prod
+  name: nexaflow-prod-root
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git

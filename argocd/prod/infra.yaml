@@ -1,25 +1,71 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "-2"
-  name: nexaflow-infra-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: infra/prod
-    directory:
-      recurse: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: sealed-secrets-prod
+      namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "-5"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: infra/prod/sealed-secrets
+        directory:
+          recurse: true
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: sealed-secrets
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
 
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: nexaflow-infra-prod
+      namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "-2"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: infra/prod
+        directory:
+          recurse: true
+          exclude: "sealed-secrets/*"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: nexaflow-storage-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: infra
+        directory:
+          include: storageclass.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

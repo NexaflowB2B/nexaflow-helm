@@ -1,217 +1,194 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: frontend-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/frontend
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: auth-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/auth-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: inventory-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/inventory-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: finance-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/finance-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: invoice-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/invoice-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: ai-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/ai-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: analytics-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/analytics-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: ocr-service-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: Charts/ocr-service
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: prod
-    
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: ai-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/ai-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
 
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: analytics-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/analytics-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: auth-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/auth-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: finance-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/finance-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: frontend-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/frontend
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: inventory-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/inventory-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: invoice-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/invoice-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: ocr-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        path: apps/ocr-service
+        helm:
+          valueFiles:
+            - values.yaml
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
