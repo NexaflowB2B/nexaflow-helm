@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nexaflow-storage
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 172.31.39.31
+  share: /var/nfs/nexaflow
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+mountOptions:
+  - nfsvers=4.1
