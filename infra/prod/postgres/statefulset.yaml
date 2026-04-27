@@ -17,6 +17,10 @@ spec:
       containers:
         - name: postgres
           image: postgres:15-alpine
+          args:
+            - postgres
+            - -c
+            - config_file=/etc/postgresql/postgresql.conf
           ports:
             - containerPort: 5432
           envFrom:
@@ -25,6 +29,13 @@ spec:
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data
+            - name: postgres-config
+              mountPath: /etc/postgresql/postgresql.conf
+              subPath: postgres.conf
+      volumes:
+        - name: postgres-config
+          configMap:
+            name: postgres-config
   volumeClaimTemplates:
     - metadata:
         name: postgres-data
