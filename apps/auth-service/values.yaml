@@ -13,8 +13,30 @@ config:
 secret:
   create: true
   sealedData:
+    DATABASE_URL: "" # Paste your kubeseal output here
     SECRET_KEY: "" # Paste your kubeseal output here
-env: []
+env:
+  - name: DATABASE_URL
+    valueFrom:
+      secretKeyRef:
+        name: auth-service-secret
+        key: DATABASE_URL
+  - name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: auth-service-secret
+        key: SECRET_KEY
+  - name: ALGORITHM
+    value: "HS256"
+  - name: ACCESS_TOKEN_EXPIRE_MINUTES
+    value: "60"
+dbInit:
+  enabled: true
+  command:
+    - python
+    - initdb.py
+  backoffLimit: 6
+  activeDeadlineSeconds: 600
 
 imagePullSecrets:
   - name: ghcr-login

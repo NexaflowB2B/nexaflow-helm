@@ -1,2 +1,4 @@
 namespace: "prod"
+secret:
+  create: false
 

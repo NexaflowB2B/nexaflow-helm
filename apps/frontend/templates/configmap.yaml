@@ -4,6 +4,8 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.appName }}-config
   namespace: {{ .Release.Namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
 data:
   {{- toYaml .Values.config.map | nindent 2 }}
 {{- end }}

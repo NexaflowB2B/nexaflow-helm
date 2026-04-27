@@ -3,11 +3,9 @@ kind: Deployment
 metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Release.Namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
-  {{- with .Values.imagePullSecrets }}
-  imagePullSecrets:
-    {{- toYaml . | nindent 8 }}
-  {{- end }}
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -30,6 +28,7 @@ spec:
           env:
             {{- toYaml .Values.env | nindent 12 }}
           {{- end }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.config.map }}
           volumeMounts:
             - name: config-volume
