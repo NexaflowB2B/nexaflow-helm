@@ -24,3 +24,5 @@ env:
         key: GOOGLE_GENAI_API_KEY
   - name: ALGORITHM
     value: "HS256"
+image:
+  tag: 33efe
