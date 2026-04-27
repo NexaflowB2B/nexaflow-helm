@@ -10,6 +10,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/ai-service
         helm:
           valueFiles:
@@ -34,6 +35,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/analytics-service
         helm:
           valueFiles:
@@ -58,6 +60,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/auth-service
         helm:
           valueFiles:
@@ -82,6 +85,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/finance-service
         helm:
           valueFiles:
@@ -106,6 +110,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/frontend
         helm:
           valueFiles:
@@ -130,6 +135,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/inventory-service
         helm:
           valueFiles:
@@ -154,6 +160,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/invoice-service
         helm:
           valueFiles:
@@ -178,6 +185,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: apps/ocr-service
         helm:
           valueFiles:

@@ -12,6 +12,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: infra/dev/sealed-secrets
         directory:
           recurse: true
@@ -36,6 +37,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: infra/dev
         directory:
           recurse: true
@@ -59,6 +61,7 @@ items:
       project: default
       source:
         repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
+        targetRevision: HEAD
         path: infra
         directory:
           include: storageclass.yaml
