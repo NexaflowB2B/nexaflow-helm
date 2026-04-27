@@ -3,38 +3,42 @@ kind: Deployment
 metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Release.Namespace }}
+
 spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
   replicas: {{ .Values.replicaCount }}
+
   selector:
     matchLabels:
       app: {{ .Values.appName }}
+
   template:
     metadata:
       labels:
         app: {{ .Values.appName }}
+
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
       containers:
         - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: {{ .Values.service.port }}
+
           {{- if .Values.env }}
           env:
             {{- toYaml .Values.env | nindent 12 }}
           {{- end }}
+
           {{- if .Values.config.map }}
           volumeMounts:
             - name: config-volume
               mountPath: /etc/nginx/conf.d
           {{- end }}
+
       {{- if .Values.config.map }}
       volumes:
         - name: config-volume
