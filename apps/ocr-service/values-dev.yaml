@@ -12,10 +12,7 @@ env:
         name: ocr-service-secret
         key: SECRET_KEY
   - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: ocr-service-secret
-        key: DATABASE_URL
+    value: "postgresql://postgres:postgres@postgres:5432/finventory_db"
   - name: ALGORITHM
     value: "HS256"
 image:

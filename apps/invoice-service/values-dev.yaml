@@ -12,11 +12,9 @@ env:
         name: invoice-service-secret
         key: SECRET_KEY
   - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: invoice-service-secret
-        key: DATABASE_URL
+    value: "postgresql://postgres:postgres@postgres:5432/finventory_db"
   - name: ALGORITHM
     value: "HS256"
 image:
+  repository: "ghcr.io/nexaflowb2b/invoice-service"
   tag: f8939

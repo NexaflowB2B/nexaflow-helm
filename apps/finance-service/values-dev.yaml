@@ -1,5 +1,8 @@
 namespace: "dev"
 appName: "finance-service"
+image:
+  repository: "ghcr.io/nexaflowb2b/finance-service"
+  tag: "b6152"
 secret:
   create: true
   sealedData:
@@ -12,9 +15,6 @@ env:
         name: finance-service-secret
         key: SECRET_KEY
   - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: finance-service-secret
-        key: DATABASE_URL
+    value: "postgresql://postgres:postgres@postgres:5432/finventory_db"
   - name: ALGORITHM
     value: "HS256"

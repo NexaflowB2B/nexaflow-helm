@@ -6,10 +6,7 @@ secret:
     DATABASE_URL: "AgCmxmuZHN33zJuCklDbwUVUOa+MwuDY2xo8wvVi19lsm5yaRIlt4XZVDVC4aHBXyO+pcqTUZeDiTUnHhl7FHgDbxwHdu8VUDKXcfr2hsRkqb58NtGmn1pGRDO9RJf684pqlMxxo1Mh76RCoob2xpwueDF+CQpVtJeHpOq+/5LMRdRbhB/CwjosZjS472vBNQfMThfXF5kDZ7f6SxCRHRxe7WJX7s9ltthimk5S3hLvzPC/4pyttdlle2cLzS13CHbjOchGw1A+6pRM73LT1Jmdb0FrdaxAo08G7SbNxfV2p6Yb1ij679ZWwGpsJ4VyQkDCjV2Y+7MASKaugcdQMDJeOoqOPo/iizLGqKahcii2vp3tuCMZs+CCmOEFUVAOOESIRB4anD48wBBVWk+2tS2Fb4iWdNHeAux+rK8hBRqaCwEPznT35njO1HE26xsViS1GmjynmEq1V5A2YjCdZX/6pzEsaGiju+b5MtKu4WFHvZGA0TN1akw+FQGHzji8590nJQR4KAvWdxHxD9LwxAfR3CBtVQfW7cGy3nIDsLhD44eDXSC007Vyazn3UhNRHhotx6pivwTdw5FIALkptZVRADbiV11PSzpt5akTi3bvSvdkdEZxoCIAZLJ7/MnNu9FTGNm8KvMoxibtQ5ANiPsuvw3opFS16lgqvb2OW0MsYbOXBLxIae42irO5CEFTeT32rvXdMCxeY+vl31h11NDiVLDOn9GrZWSDCbUpV5Vij2YLZG5OZMtxHOhaA/g8DTbDo5e/qKD6tzcyJ30+KfxOMlTg6CA=="
 env:
   - name: DATABASE_URL
-    valueFrom:
-      secretKeyRef:
-        name: inventory-service-secret
-        key: DATABASE_URL
+    value: "postgresql://postgres:postgres@postgres:5432/finventory_db"
   - name: SECRET_KEY
     valueFrom:
       secretKeyRef:
