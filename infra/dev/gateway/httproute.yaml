@@ -8,6 +8,7 @@ spec:
     - name: nexaflow-gateway
   hostnames:
     - nexaflow-dev.internal
+    # - app.nexaflow.dev
   rules:
     - matches:
         - path:

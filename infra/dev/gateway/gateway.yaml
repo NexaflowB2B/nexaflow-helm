@@ -4,7 +4,7 @@ metadata:
   name: nexaflow-gateway
   namespace: dev
 spec:
-  gatewayClassName: istio # Update this to match your cluster's gateway class (e.g., istio, gloo, nginx)
+  gatewayClassName: kgateway
   listeners:
     - name: http
       protocol: HTTP
