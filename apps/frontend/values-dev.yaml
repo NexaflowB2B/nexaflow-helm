@@ -1,28 +1,6 @@
 namespace: "dev"
 config:
   map:
-    default.conf: |
-      server {
-          listen 80;
-          server_name _;
-          root /usr/share/nginx/html;
-          index login.html;
-
-          # Support multi-page HTML files without .html extension in URL
-          location / {
-              try_files $uri $uri.html $uri/ /login.html;
-          }
-
-          # Handle errors
-          error_page 404 /login.html;
-
-          location ~* \.html$ { 
-              add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
-          }
-          location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg)$ { 
-              add_header Cache-Control "public, max-age=3600"; 
-          }
-      }
+    default.conf: "server {\n    listen 80;\n    server_name _;\n    root /usr/share/nginx/html;\n    index login.html;\n\n    # Support multi-page HTML files without .html extension in URL\n    location / {\n        try_files $uri $uri.html $uri/ /login.html;\n    }\n\n    # Handle errors\n    error_page 404 /login.html;\n\n    location ~* \\.html$ { \n        add_header Cache-Control \"no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0\";\n    }\n    location ~* \\.(css|js|png|jpg|jpeg|gif|ico|svg)$ { \n        add_header Cache-Control \"public, max-age=3600\"; \n    }\n}\n"
 image:
-  tag: "61349"
-
+  tag: "bf2ed"
