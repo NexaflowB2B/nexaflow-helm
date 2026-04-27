@@ -19,3 +19,5 @@ env:
     value: "HS256"
   - name: ACCESS_TOKEN_EXPIRE_MINUTES
     value: "60"
+image:
+  tag: fad9f
