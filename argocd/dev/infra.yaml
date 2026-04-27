@@ -9,7 +9,9 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NexaflowB2B/nexaflow-helm.git
-    path: infra/dev
+    path: infra
+    directory:
+      recurse: true
     directory:
       recurse: false
     ignoreDifferences:
