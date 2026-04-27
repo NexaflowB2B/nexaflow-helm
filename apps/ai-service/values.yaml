@@ -41,7 +41,3 @@ dbInit:
     - initdb.py
   backoffLimit: 6
   activeDeadlineSeconds: 600
-
-
-imagePullSecrets:
-  - name: ghcr-login

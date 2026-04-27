@@ -37,5 +37,3 @@ dbInit:
   activeDeadlineSeconds: 600
 
 
-imagePullSecrets:
-  - name: ghcr-login

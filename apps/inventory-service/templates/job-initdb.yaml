@@ -15,10 +15,7 @@ spec:
         app: {{ .Values.appName }}-initdb
     spec:
       restartPolicy: OnFailure
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+
       containers:
         - name: initdb
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -30,3 +27,4 @@ spec:
             {{- toYaml .Values.env | nindent 12 }}
           {{- end }}
 {{- end }}
+

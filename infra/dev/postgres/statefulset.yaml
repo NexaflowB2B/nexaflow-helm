@@ -1,4 +1,4 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres
@@ -14,8 +14,6 @@ spec:
       labels:
         app: postgres
     spec:
-      imagePullSecrets:
-        - name: ghcr-login
       containers:
       - name: postgres
         image: postgres:15-alpine
@@ -47,3 +45,4 @@ spec:
       resources:
         requests:
           storage: 1Gi
+
