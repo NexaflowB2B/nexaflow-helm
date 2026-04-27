@@ -25,4 +25,4 @@ env:
   - name: ALGORITHM
     value: "HS256"
 image:
-  tag: 33efe
+  tag: e9930
