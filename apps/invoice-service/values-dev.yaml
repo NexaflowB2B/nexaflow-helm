@@ -18,3 +18,5 @@ env:
         key: DATABASE_URL
   - name: ALGORITHM
     value: "HS256"
+image:
+  tag: f8939
