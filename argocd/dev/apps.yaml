@@ -6,6 +6,8 @@ items:
     metadata:
       name: ai-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -25,12 +27,32 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+            - /spec/clusterIPs
+        - group: apps
+          kind: Deployment
+          jsonPointers:
+            - /spec/replicas
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
+            - /metadata/resourceVersion
+            - /metadata/generation
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: analytics-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -50,12 +72,29 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: apps
+          kind: Deployment
+          jsonPointers:
+            - /spec/replicas
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: auth-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -75,12 +114,24 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: finance-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -100,12 +151,24 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: frontend-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
     spec:
       project: default
       source:
@@ -125,12 +188,24 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: inventory-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -150,12 +225,24 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: invoice-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -175,12 +262,24 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
       name: ocr-service-dev
       namespace: argocd
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       project: default
       source:
@@ -200,3 +299,13 @@ items:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - RespectIgnoreDifferences=true
+      ignoreDifferences:
+        - group: ""
+          kind: Service
+          jsonPointers:
+            - /spec/clusterIP
+        - group: "*"
+          kind: "*"
+          jsonPointers:
+            - /metadata/managedFields
