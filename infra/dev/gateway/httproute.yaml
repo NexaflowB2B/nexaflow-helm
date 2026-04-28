@@ -7,8 +7,9 @@ spec:
   parentRefs:
     - name: nexaflow-gateway
   hostnames:
-    - nexaflow-dev.internal
-    # - app.nexaflow.dev
+  - nexaflow.site
+  - www.nexaflow.site
+  - "*.nexaflow.site"
   rules:
     - matches:
         - path:
